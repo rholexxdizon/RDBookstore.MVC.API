@@ -38,17 +38,21 @@ namespace RDBookstoreMVC2.Models
 
         [Required,
         DisplayFormat(DataFormatString = "{0} cm"),
-        Display(Name = "Length (cm)")]
+        Display(Name = "Length (cm)"),
+        Range(10,30,ErrorMessage ="Length must be between 10cm to 30cm")]
+
         public short Length { get; set; }
 
         [Required,
         DisplayFormat(DataFormatString = "{0} cm"),
-        Display(Name = "Width (cm)")]
+        Display(Name = "Width (cm)"),
+        Range(10, 35, ErrorMessage = "Width must be between 10cm to 35cm")]
         public short Width { get; set; }
 
         [Required,
         DisplayFormat(DataFormatString = "{0} cm"),
-        Display(Name = "Height (cm)")]
+        Display(Name = "Height (cm)"),
+        Range(10, 30, ErrorMessage = "Height must be between 10cm to 30cm")]
         public short Height { get; set; }
 
         [Required]
