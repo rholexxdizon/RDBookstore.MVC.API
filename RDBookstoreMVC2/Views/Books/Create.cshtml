@@ -93,15 +93,16 @@ background-color:green;"><i class="fa-solid fa-circle-plus"></i>Add Book</h1>
                 <span asp-validation-for="SalesRank" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-success alert alert-success" />
+                <input type="submit" value="Create" class="btn btn-success" />
             </div>
+            <a asp-action="Index" class="btn btn-secondary" style="color:white; margin-bottom:15px;" ><i class="fa-solid fa-circle-arrow-left"></i> Back to Books</a>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index" class="btn btn-warning" style="color:black" ><i class="fa-solid fa-circle-arrow-left"></i> Back to Books</a>
-</div>
+
+    
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

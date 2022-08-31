@@ -160,3 +160,4 @@ C:\Users\rholex.dizon\OneDrive - Accenture\Desktop\RDBookstore\RDBoookstoreAPI\R
 C:\Users\rholex.dizon\OneDrive - Accenture\Desktop\RDBookstore\RDBoookstoreAPI\RDBookstoreMVC2\obj\Release\netcoreapp3.1\RDBookstoreMVC2.dll
 C:\Users\rholex.dizon\OneDrive - Accenture\Desktop\RDBookstore\RDBoookstoreAPI\RDBookstoreMVC2\obj\Release\netcoreapp3.1\RDBookstoreMVC2.pdb
 C:\Users\rholex.dizon\OneDrive - Accenture\Desktop\RDBookstore\RDBoookstoreAPI\RDBookstoreMVC2\obj\Release\netcoreapp3.1\RDBookstoreMVC2.genruntimeconfig.cache
+C:\Users\rholex.dizon\OneDrive - Accenture\Desktop\RDBookstore\RDBoookstoreAPI\RDBookstoreMVC2\obj\Release\netcoreapp3.1\Razor\Views\Books\BooksList.cshtml.g.cs
