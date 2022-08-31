@@ -5,9 +5,7 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RDBookstoreAPI", "RDBoookstoreAPI\RDBookstoreAPI.csproj", "{FFDEF157-53EF-4FA6-90D6-4B29AAE290C0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RDBookstoreMVC", "RDBookstoreMVC\RDBookstoreMVC.csproj", "{2C74042A-6AB0-4392-9076-A598F1C6059D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDBookstoreMVC2", "RDBookstoreMVC2\RDBookstoreMVC2.csproj", "{54A64009-4408-405B-94BC-51FED972671C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RDBookstoreMVC2", "RDBookstoreMVC2\RDBookstoreMVC2.csproj", "{54A64009-4408-405B-94BC-51FED972671C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{FFDEF157-53EF-4FA6-90D6-4B29AAE290C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFDEF157-53EF-4FA6-90D6-4B29AAE290C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFDEF157-53EF-4FA6-90D6-4B29AAE290C0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C74042A-6AB0-4392-9076-A598F1C6059D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C74042A-6AB0-4392-9076-A598F1C6059D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C74042A-6AB0-4392-9076-A598F1C6059D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C74042A-6AB0-4392-9076-A598F1C6059D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{54A64009-4408-405B-94BC-51FED972671C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{54A64009-4408-405B-94BC-51FED972671C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54A64009-4408-405B-94BC-51FED972671C}.Release|Any CPU.ActiveCfg = Release|Any CPU

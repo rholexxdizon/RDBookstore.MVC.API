@@ -141,6 +141,7 @@ C:\Users\rholex.dizon\OneDrive - Accenture\Desktop\RDBookstore\RDBoookstoreAPI\R
 C:\Users\rholex.dizon\OneDrive - Accenture\Desktop\RDBookstore\RDBoookstoreAPI\RDBookstoreMVC2\obj\Debug\netcoreapp3.1\RDBookstoreMVC2.TagHelpers.input.cache
 C:\Users\rholex.dizon\OneDrive - Accenture\Desktop\RDBookstore\RDBoookstoreAPI\RDBookstoreMVC2\obj\Debug\netcoreapp3.1\RDBookstoreMVC2.TagHelpers.output.cache
 C:\Users\rholex.dizon\OneDrive - Accenture\Desktop\RDBookstore\RDBoookstoreAPI\RDBookstoreMVC2\obj\Debug\netcoreapp3.1\RDBookstoreMVC2.RazorCoreGenerate.cache
+C:\Users\rholex.dizon\OneDrive - Accenture\Desktop\RDBookstore\RDBoookstoreAPI\RDBookstoreMVC2\obj\Debug\netcoreapp3.1\Razor\Views\Books\BooksList.cshtml.g.cs
 C:\Users\rholex.dizon\OneDrive - Accenture\Desktop\RDBookstore\RDBoookstoreAPI\RDBookstoreMVC2\obj\Debug\netcoreapp3.1\Razor\Views\Books\Create.cshtml.g.cs
 C:\Users\rholex.dizon\OneDrive - Accenture\Desktop\RDBookstore\RDBoookstoreAPI\RDBookstoreMVC2\obj\Debug\netcoreapp3.1\Razor\Views\Books\Delete.cshtml.g.cs
 C:\Users\rholex.dizon\OneDrive - Accenture\Desktop\RDBookstore\RDBoookstoreAPI\RDBookstoreMVC2\obj\Debug\netcoreapp3.1\Razor\Views\Books\Details.cshtml.g.cs
@@ -160,4 +161,3 @@ C:\Users\rholex.dizon\OneDrive - Accenture\Desktop\RDBookstore\RDBoookstoreAPI\R
 C:\Users\rholex.dizon\OneDrive - Accenture\Desktop\RDBookstore\RDBoookstoreAPI\RDBookstoreMVC2\obj\Debug\netcoreapp3.1\RDBookstoreMVC2.dll
 C:\Users\rholex.dizon\OneDrive - Accenture\Desktop\RDBookstore\RDBoookstoreAPI\RDBookstoreMVC2\obj\Debug\netcoreapp3.1\RDBookstoreMVC2.pdb
 C:\Users\rholex.dizon\OneDrive - Accenture\Desktop\RDBookstore\RDBoookstoreAPI\RDBookstoreMVC2\obj\Debug\netcoreapp3.1\RDBookstoreMVC2.genruntimeconfig.cache
-C:\Users\rholex.dizon\OneDrive - Accenture\Desktop\RDBookstore\RDBoookstoreAPI\RDBookstoreMVC2\obj\Debug\netcoreapp3.1\Razor\Views\Books\BooksList.cshtml.g.cs
