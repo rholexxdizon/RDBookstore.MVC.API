@@ -1,0 +1,115 @@
+﻿@model RDBookstoreMVC2.Models.Books
+
+@{
+    ViewData["Title"] = "Update Page";
+}
+
+<h1 class="bg-info row" 
+style="font-family:Georgia, 'Times New Roman', Times, serif; 
+padding-top: 5px; 
+padding-left:5px;
+padding-bottom:8px;
+color:white;">Update</h1>
+
+
+
+<div class="row" style="background-color:#f8f8ff;">
+    <div class="col-4">
+        <div>
+            <h4>Books</h4>
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Author" class="control-label"></label>
+                <input asp-for="Author" class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Overview" class="control-label"></label>
+                <textarea asp-for="Overview" class="form-control" cols=40 rows=5></textarea>
+                <span asp-validation-for="Overview" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Summary" class="control-label"></label>
+                <textarea asp-for="Summary" class="form-control" cols=80 rows=10></textarea>
+                <span asp-validation-for="Summary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Publisher" class="control-label"></label>
+                <input asp-for="Publisher" class="form-control" />
+                <span asp-validation-for="Publisher" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pages" class="control-label"></label>
+                <input asp-for="Pages" class="form-control" />
+                <span asp-validation-for="Pages" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Length" class="control-label"></label>
+                <input asp-for="Length" class="form-control" />
+                <span asp-validation-for="Length" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Width" class="control-label"></label>
+                <input asp-for="Width" class="form-control" />
+                <span asp-validation-for="Width" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Height" class="control-label"></label>
+                <input asp-for="Height" class="form-control" />
+                <span asp-validation-for="Height" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre" class="control-label"></label>
+                <input asp-for="Genre" class="form-control" />
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PublicationDate" class="control-label"></label>
+                <input asp-for="PublicationDate" class="form-control" />
+                <span asp-validation-for="PublicationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label"></label>
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISBN" class="control-label"></label>
+                <input asp-for="ISBN" class="form-control" />
+                <span asp-validation-for="ISBN" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="SalesRank" class="control-label"></label>
+                <input asp-for="SalesRank" class="form-control" />
+                <span asp-validation-for="SalesRank" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+               <input type="submit" value="Save" class="btn btn-info" />
+               
+            </div>
+        </form>
+    </div>
+<div>
+  <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-primary"><i class="fa-solid fa-circle-chevron-left"></i> Back to Details</a>
+  <a asp-action="Index" class="btn btn-secondary"><i class="fa-solid fa-circle-arrow-left"></i> Back to Books</a>
+</div>
+</div>
+<div class="col-4" style="margin-left:100px; margin-top: 15px;">
+        <img src="@Model.ImageUrl" class="w-100"/>
+</div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

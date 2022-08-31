@@ -1,0 +1,135 @@
+﻿@model RDBookstoreMVC2.Models.Books
+
+@{
+    ViewData["Title"] = "Details Page";
+}
+@*<div class="bg-image" 
+     style="background-image: url('@Model.ImageUrl');
+            background-size:cover;
+            height:100%;
+            background-repeat:no-repeat;>
+             filter: blur(8px);
+  -webkit-filter: blur(8px);
+  background-position: center";>
+ </div>
+
+ *@
+        
+<h1 class="bg-info row" 
+style="font-family:Georgia, 'Times New Roman', Times, serif; 
+padding-top: 5px; 
+padding-left:5px;
+color:white;">Details</h1>
+
+
+     
+<div class="row" style="background-color:#f8f8ff;">
+   <div class="col-7">
+        <div>
+            <dl class="row" >
+         <dt class = "col-sm-3" >
+          
+        </dt>
+        <dd class = "col-sm-12" style="font-size:250%; font-family:Georgia, 'Times New Roman', Times, serif; text-align:left;">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        
+        <dt class = "col-sm-3" >
+            @Html.DisplayNameFor(model => model.Author) &nbsp <i class="fa-solid fa-feather-pointed"></i>
+        </dt>
+        <dd class = "col-sm-9"style="text-align:justify;">
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-9"style="text-align:justify;">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Overview)
+        </dt>
+        <dd class = "col-sm-9" style="text-align:justify;">
+            @Html.DisplayFor(model => model.Overview)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Summary) &nbsp<i class="fa-solid fa-book-open"></i>
+        </dt>
+        <dd class = "col-sm-9"style="text-align:justify;">
+            @Html.DisplayFor(model => model.Summary)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Publisher)
+        </dt>
+        <dd class = "col-sm-9" style="text-align:justify;">
+            @Html.DisplayFor(model => model.Publisher)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Pages) &nbsp<i class="fa-solid fa-file-lines"></i>
+        </dt>
+        <dd class = "col-sm-9" style="text-align:justify;">
+            @Html.DisplayFor(model => model.Pages)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Length) &nbsp<i class="fa-solid fa-ruler-combined"></i>
+        </dt>
+        <dd class = "col-sm-9" style="text-align:justify;">
+            @Html.DisplayFor(model => model.Length)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Width)  &nbsp&nbsp<i class="fa-solid fa-ruler-horizontal"></i>
+        </dt>
+        <dd class = "col-sm-9" style="text-align:justify;">
+            @Html.DisplayFor(model => model.Width)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Height) &nbsp&nbsp<i class="fa-solid fa-ruler-vertical"></i>
+        </dt>
+        <dd class = "col-sm-9" style="text-align:justify;">
+            @Html.DisplayFor(model => model.Height)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+        <dd class = "col-sm-9" style="text-align:justify;">
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+         <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.PublicationDate) 
+        </dt>
+        <dd class = "col-sm-9" style="text-align:justify;">
+            @Html.DisplayFor(model => model.PublicationDate)
+        </dd>
+         <dt class = "col-sm-3" >
+            @Html.DisplayNameFor(model => model.ImageUrl) 
+        </dt>
+        <dd class = "col-sm-9" style="text-align:justify;">
+            @Html.DisplayFor(model => model.ImageUrl)
+        </dd>
+        <dt class = "col-sm-3" >
+            @Html.DisplayNameFor(model => model.ISBN) &nbsp&nbsp<i class="fa-solid fa-barcode pl-5px"></i>
+        </dt>
+        <dd class = "col-sm-9" style="text-align:justify;">
+            @Html.DisplayFor(model => model.ISBN)
+        </dd>
+         <dt class = "col-sm-3" >
+            @Html.DisplayNameFor(model => model.SalesRank) &nbsp&nbsp<i class="fa-solid fa-trophy"></i>
+        </dt>
+        <dd class = "col-sm-9" style="text-align:justify;">
+            @Html.DisplayFor(model => model.SalesRank)
+        </dd>
+        </dl>
+     
+     
+    </div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-info"><i class="fa-solid fa-pen-to-square"></i>  Edit</a>
+    <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger"><div class="text-white"><i class="fa-solid fa-trash-can"></i> Delete</div></a>
+    <a asp-action="Index" class="btn btn-secondary"><i class="fa-solid fa-circle-arrow-left"></i> Back to Books</a>
+</div>
+</div>
+
+<div class="col-4" style="margin-left:15px; margin-top: 15px;">
+        <img src="@Model.ImageUrl" class="w-100"/>
+</div>
+</div>

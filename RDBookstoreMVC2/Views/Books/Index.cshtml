@@ -1,0 +1,42 @@
+﻿@model IEnumerable<RDBookstoreMVC2.Models.Books>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<h1 class="row bg-info" 
+style="font-family:Georgia, 'Times New Roman', Times, serif; 
+padding-top: 6px; 
+padding-bottom: 3px;
+padding-left:10px;
+font-size:40px;
+color:white;"><i class="fa-solid fa-book text-dark ml-2px"></i><div style="padding-left:10px">Books Collection</div></h1>
+
+<p>
+    <div class="d-flex justify-content-end"><a class="btn btn-success" asp-controller="Books" asp-action="Create" ><i class="fa-solid fa-circle-plus"></i> Add Book</a></div>
+</p>
+
+
+<div class="row">
+    @foreach (var book in Model)
+    {
+        <div class="col-3">
+            <div class="card my-3 store-card">
+                <a class="a-cleanup" asp-controller="Books" asp-action="Details" asp-route-id="@book.Id">
+                    <img src="@book.ImageUrl" class="card-img-top card-img-custom" style="object-fit:cover">
+                    <div class="card-body" style="height: 4em;">
+                        <h5 class="mb-2" style="color:darkseagreen; font-weight:bold;">@book.Title</h5>
+                            </div>
+                            </a>
+                        <p class="mb-3 card-body" style="font-size:.85em; text-align:justify;"><i class="fa-solid fa-book-open"></i>&nbsp @book.Overview</p>
+                   
+                    <div class="card-body">
+                        <span class="card-text">@book.Price.ToString("\u20B10")</span>
+                        <a asp-controller="Books" asp-action="Details" asp-route-id="@book.Id" class="btn btn-secondary float-right"><i class="fa-solid fa-circle-info"></i></a>
+                    </div>
+               
+            </div>
+        </div>
+    }
+</div>
