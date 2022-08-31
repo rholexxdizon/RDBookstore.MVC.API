@@ -30,10 +30,10 @@ body {
     transition: all 0.3s ease;
 }
 
-.store-card:hover{
-    transform:scale(1.03);
-    box-shadow: lightgray 4px 5px 5px 2px;
-}
+    .store-card:hover {
+        transform: scale(1.03);
+        box-shadow: #17a2b8 4px 5px 5px 2px;
+    }
 a.navbar-brand {
   white-space: normal;
   text-align: center;

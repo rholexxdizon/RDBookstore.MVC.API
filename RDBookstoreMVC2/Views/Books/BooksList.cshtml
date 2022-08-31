@@ -1,0 +1,71 @@
+﻿@model IEnumerable<RDBookstoreMVC2.Models.Books>
+
+@{
+    ViewData["Title"] = "Books List";
+}
+
+
+<h1 class="row bg-info" 
+style="font-family:Georgia, 'Times New Roman', Times, serif; 
+padding-top: 6px; 
+padding-bottom: 3px;
+padding-left:10px;
+font-size:40px;
+color:white;"><i class="fa-solid fa-book text-dark ml-2px"></i><div style="padding-left:10px">Books Collection</div></h1>
+
+<p>
+    <div class="d-flex justify-content-end"><a class="btn btn-success" asp-controller="Books" asp-action="Create" ><i class="fa-solid fa-circle-plus"></i> Add Book</a></div>
+</p>
+
+
+<table class="table">
+    <thead>
+        <tr> 
+            <th>
+              
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Overview)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var book in Model) {
+        <tr>
+            <td>
+             <a asp-action="Details" asp-route-id="@book.Id"><img src="@book.ImageUrl" style="object-fit:cover; height:180px;;"></a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelbook => book.Title)
+            </td>
+              <td>
+               <div style="text-align:justify;"> @Html.DisplayFor(modelbook => book.Overview)</div>
+            </td>
+            <td>
+                @Html.DisplayFor(modelbook => book.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelbook => book.Price)
+            </td>
+        
+             <td>
+                <a asp-action="Edit" asp-route-id="@book.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@book.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@book.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

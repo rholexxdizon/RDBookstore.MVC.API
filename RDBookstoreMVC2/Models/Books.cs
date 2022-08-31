@@ -27,7 +27,7 @@ namespace RDBookstoreMVC2.Models
         [MaxLength(250)]
         public string Overview { get; set; }
 
-       [Required]
+        [Required]
         public string Summary { get; set; }
 
         [Required]
@@ -75,5 +75,4 @@ namespace RDBookstoreMVC2.Models
         public int SalesRank { get; set; }
     }
 
-    
 }

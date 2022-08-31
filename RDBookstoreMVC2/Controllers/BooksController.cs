@@ -56,6 +56,30 @@ namespace RDBookstoreMVC2.Controllers
 
         }
 
+        public async Task<IActionResult> BooksList()
+        {
+            IList<Books> lsBooks = null;
+            try
+            {
+                var responseTask = Client.GetAsync("api/Books");
+                responseTask.Wait();
+                var result = responseTask.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    var readTask = result.Content.ReadAsAsync<IList<Books>>();
+                    readTask.Wait();
+                    lsBooks = readTask.Result;
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Application Error");
+            }
+
+            return View(lsBooks);
+
+        }
+
         // GET: Books/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -84,7 +108,7 @@ namespace RDBookstoreMVC2.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Author,Price,Overview,Summary,Publisher,Pages,Length,Width,Height,Genre,PublicationDate,ImageUrl,ISBN")] Books books)
+        public async Task<IActionResult> Create([Bind("Id,Title,Author,Price,Overview,Summary,Publisher,Pages,Length,Width,Height,Genre,PublicationDate,ImageUrl,ISBN,SalesRank")] Books books)
         {
             try
             {
@@ -96,7 +120,7 @@ namespace RDBookstoreMVC2.Controllers
 
                     if (result.IsSuccessStatusCode)
                     {
-                        return RedirectToAction("Index", "Customer");
+                        return RedirectToAction(nameof(Index));
                     }
                 }
             }
@@ -128,7 +152,7 @@ namespace RDBookstoreMVC2.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Author,Price,Overview,Summary,Publisher,Pages,Length,Width,Height,Genre,PublicationDate,ImageUrl,ISBN")] Books books)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Author,Price,Overview,Summary,Publisher,Pages,Length,Width,Height,Genre,PublicationDate,ImageUrl,ISBN,SalesRank")] Books books)
         {
             if (id != books.Id)
             {
