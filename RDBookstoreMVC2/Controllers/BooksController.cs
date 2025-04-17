@@ -13,7 +13,6 @@ namespace RDBookstoreMVC2.Controllers
 {
     public class BooksController : Controller
     {
-        private readonly BooksDbContext _context;
         private readonly IConfiguration _config;
         private readonly string _apiUrl;
         public static HttpClient Client = null;
@@ -22,6 +21,7 @@ namespace RDBookstoreMVC2.Controllers
         {
             _config = config;
             _apiUrl = _config.GetValue<string>("WebApiUrl");
+
             if (Client == null)
             {
                 Client = new HttpClient();
@@ -37,17 +37,14 @@ namespace RDBookstoreMVC2.Controllers
             IList<Books> lsBooks = null;
             try
             {
-                var responseTask = Client.GetAsync("api/Books");
-                responseTask.Wait();
-                var result = responseTask.Result;
-                if (result.IsSuccessStatusCode)
+                var responseTask = await Client.GetAsync("api/Books");
+
+                if (responseTask.IsSuccessStatusCode)
                 {
-                    var readTask = result.Content.ReadAsAsync<IList<Books>>();
-                    readTask.Wait();
-                    lsBooks = readTask.Result;
+                    lsBooks = await responseTask.Content.ReadAsAsync<IList<Books>>();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return BadRequest("Application Error");
             }
@@ -61,17 +58,15 @@ namespace RDBookstoreMVC2.Controllers
             IList<Books> lsBooks = null;
             try
             {
-                var responseTask = Client.GetAsync("api/Books");
-                responseTask.Wait();
-                var result = responseTask.Result;
-                if (result.IsSuccessStatusCode)
+                var responseTask = await Client.GetAsync("api/Books"); 
+
+                if (responseTask.IsSuccessStatusCode)
                 {
-                    var readTask = result.Content.ReadAsAsync<IList<Books>>();
-                    readTask.Wait();
-                    lsBooks = readTask.Result;
+                    lsBooks = await responseTask.Content.ReadAsAsync<IList<Books>>();
+                
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return BadRequest("Application Error");
             }
@@ -88,7 +83,7 @@ namespace RDBookstoreMVC2.Controllers
                 return NotFound();
             }
 
-            var books = GetBooks(id.Value);
+            var books = await GetBooks(id.Value);
             if (books == null)
             {
                 return NotFound();
@@ -114,11 +109,9 @@ namespace RDBookstoreMVC2.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var responseTask = Client.PostAsJsonAsync("api/Books", books);
-                    responseTask.Wait();
-                    var result = responseTask.Result;
+                    var responseTask = await Client.PostAsJsonAsync("api/Books", books);
 
-                    if (result.IsSuccessStatusCode)
+                    if (responseTask.IsSuccessStatusCode)
                     {
                         return RedirectToAction(nameof(Index));
                     }
@@ -139,7 +132,7 @@ namespace RDBookstoreMVC2.Controllers
                 return NotFound();
             }
 
-            var books = GetBooks(id.Value);
+            var books = await GetBooks(id.Value);
             if (books == null)
             {
                 return NotFound();
@@ -164,17 +157,16 @@ namespace RDBookstoreMVC2.Controllers
                 try
                 {
                     //HTTP GET
-                    var responseTask = Client.PutAsJsonAsync($"api/Books/{id}", books);
-                    responseTask.Wait();
-                    var result = responseTask.Result;
-                    if (result.IsSuccessStatusCode)
+                    var responseTask = await Client.PutAsJsonAsync($"api/Books/{id}", books);
+                    
+                    if (responseTask.IsSuccessStatusCode)
                     {
                         return RedirectToAction(nameof(Index));
                     }
 
                   
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     return BadRequest("Application Error");
                 }
@@ -190,7 +182,7 @@ namespace RDBookstoreMVC2.Controllers
                 return NotFound();
             }
 
-            var books = GetBooks(id.Value);
+            var books = await GetBooks(id.Value);
             if (books == null)
             {
                 return NotFound();
@@ -209,11 +201,9 @@ namespace RDBookstoreMVC2.Controllers
             {
                 //HTTP GET
 
-                var responseTask = Client.DeleteAsync($"api/Books/{id}");
-                responseTask.Wait();
+                var responseTask = await Client.DeleteAsync($"api/Books/{id}");
 
-                var result = responseTask.Result;
-                if (result.IsSuccessStatusCode)
+                if (responseTask.IsSuccessStatusCode)
                 {
                     return RedirectToAction(nameof(Index));
                 }
@@ -227,24 +217,14 @@ namespace RDBookstoreMVC2.Controllers
 
         }
 
-        private bool BooksExists(int id)
-        {
-            return _context.Books.Any(e => e.Id == id);
-        }
-
-        private Books GetBooks(int id)
+        private async Task <Books> GetBooks(int id)
         {
             Books books = null;
 
-            var responseTask = Client.GetAsync($"api/Books/{id}");
-            responseTask.Wait();
-
-            var result = responseTask.Result;
-            if (result.IsSuccessStatusCode)
+            var responseTask = await Client.GetAsync($"api/Books/{id}");
+            if (responseTask.IsSuccessStatusCode)
             {
-                var readTask = result.Content.ReadAsAsync<Books>();
-                readTask.Wait();
-                books = readTask.Result;
+                books = await responseTask.Content.ReadAsAsync<Books>();
             }
             else
             {
