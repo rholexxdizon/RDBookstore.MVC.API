@@ -13,9 +13,9 @@ namespace RDBoookstoreAPI.Controllers
     [ApiController]
     public class BooksController : Controller
     {
-        private readonly BooksDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public BooksController(BooksDbContext context)
+        public BooksController(ApplicationDbContext context)
         {
             _context = context;
         }
