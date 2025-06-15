@@ -31,7 +31,7 @@ namespace RDBookstoreMVC2.Controllers
         }
 
         // GET: Books
-        
+
         public async Task<IActionResult> Index()
         {
             IList<Books> lsBooks = null;
@@ -58,12 +58,12 @@ namespace RDBookstoreMVC2.Controllers
             IList<Books> lsBooks = null;
             try
             {
-                var responseTask = await Client.GetAsync("api/Books"); 
+                var responseTask = await Client.GetAsync("api/Books");
 
                 if (responseTask.IsSuccessStatusCode)
                 {
                     lsBooks = await responseTask.Content.ReadAsAsync<IList<Books>>();
-                
+
                 }
             }
             catch (Exception)
@@ -158,13 +158,13 @@ namespace RDBookstoreMVC2.Controllers
                 {
                     //HTTP GET
                     var responseTask = await Client.PutAsJsonAsync($"api/Books/{id}", books);
-                    
+
                     if (responseTask.IsSuccessStatusCode)
                     {
                         return RedirectToAction(nameof(Index));
                     }
 
-                  
+
                 }
                 catch (Exception)
                 {
@@ -217,7 +217,7 @@ namespace RDBookstoreMVC2.Controllers
 
         }
 
-        private async Task <Books> GetBooks(int id)
+        private async Task<Books> GetBooks(int id)
         {
             Books books = null;
 

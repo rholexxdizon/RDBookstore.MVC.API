@@ -22,14 +22,14 @@ namespace RDBoookstoreAPI.Controllers
 
         // GET: api/Books
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Books>>> GetBooks()
+        public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
         {
             return await _context.Books.ToListAsync();
         }
 
         // GET: api/Books
         [HttpGet("{id}")]
-        public async Task<ActionResult<Books>> GetBooks(int id)
+        public async Task<ActionResult<Book>> GetBooks(int id)
         {
             var books = await _context.Books.FindAsync(id);
 
@@ -44,7 +44,7 @@ namespace RDBoookstoreAPI.Controllers
         
         //Edit
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBooks(int id, Books books)
+        public async Task<IActionResult> PutBooks(int id, Book books)
         {
             if (id != books.Id)
             {
@@ -74,7 +74,7 @@ namespace RDBoookstoreAPI.Controllers
 
         //POST: ADD
         [HttpPost]
-        public async Task<ActionResult<Books>> PostBooks(Books books)
+        public async Task<ActionResult<Book>> PostBooks(Book books)
         {
             _context.Books.Add(books);
             await _context.SaveChangesAsync();
@@ -84,7 +84,7 @@ namespace RDBoookstoreAPI.Controllers
 
         // DELETE
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Books>> DeleteCustomer(int id)
+        public async Task<ActionResult<Book>> DeleteCustomer(int id)
         {
             var books = await _context.Books.FindAsync(id);
             if (books == null)
